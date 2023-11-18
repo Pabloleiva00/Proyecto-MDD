@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>BirdMe</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</head>
+<body>
+
+    <h1>BirdMe</h1>
+
+    <h2>¡Reconoce un ave con solo una foto!</h2>
+
+    <h3>Sube una imagen de un ave para obtener información sobre su especie</h3>
+
+    <div id="dropArea" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" onclick="triggerFileInput()">
+        <p>Arrastra aquí tu imagen, o has click para seleccionar una.</p>
+        <input type="file" id="imageInput" accept="image/*" onchange="handleFileSelect()">
+    </div>
+
+    <div id="uploadedImageContainer">
+        <img id="uploadedImage">
+    </div>
+
+    <button type="button" onclick="getInfo()">Obtener información</button>
+
+    <script type="text/javascript" src="backend.js"></script>
+
+</body>
+</html>
